@@ -119,7 +119,7 @@ body {
 /* subtle icon hover scale on non-touch */
 @media (hover: hover) {
   .icon-wrap:hover .app-icon { 
-    transform: translateY(-16px) scale(1.08) rotate(5deg);
+    transform: translateY(-16px) scale(1.05);
     box-shadow: 0 12px 36px rgba(168,85,247,0.8);
   }
 }
@@ -285,6 +285,9 @@ main {
   color: #e0d0ff; 
   letter-spacing:0.4px;
   text-shadow: 0 0 10px rgba(168,85,247,0.3);
+}
+
+.feature.is-visible h2 {
   animation: slideIn 600ms ease-out backwards;
 }
 
@@ -297,6 +300,9 @@ main {
   margin: 0; 
   color: #c0b0d0; 
   font-size: 1.02rem;
+}
+
+.feature.is-visible p {
   animation: slideIn 600ms ease-out 100ms backwards;
 }
 
@@ -312,11 +318,17 @@ main {
   transform: translateY(0) scale(1); 
 }
 
-/* Stagger effect for sequential features */
+/* Stagger effect for sequential features - supports up to 10 features */
 .reveal:nth-child(2) { transition-delay: 100ms; }
 .reveal:nth-child(3) { transition-delay: 200ms; }
 .reveal:nth-child(4) { transition-delay: 300ms; }
 .reveal:nth-child(5) { transition-delay: 400ms; }
+.reveal:nth-child(6) { transition-delay: 500ms; }
+.reveal:nth-child(7) { transition-delay: 600ms; }
+.reveal:nth-child(8) { transition-delay: 700ms; }
+.reveal:nth-child(9) { transition-delay: 800ms; }
+.reveal:nth-child(10) { transition-delay: 900ms; }
+.reveal:nth-child(11) { transition-delay: 1000ms; }
 
 /* footer */
 footer {
@@ -362,10 +374,11 @@ footer::before {
   .app-icon,
   .site-title,
   .download-btn,
-  .footer::before { 
+  footer::before { 
     animation: none !important; 
   }
   .reveal { transition: none; transform: none; opacity: 1; }
   .app-icon { transition: none; }
   .mini-nav a, .feature-inner { transition: none; }
+  .feature h2, .feature p { animation: none; }
 }
